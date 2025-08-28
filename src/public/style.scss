@@ -1,0 +1,416 @@
+:root {
+    --primary-color: #ff4406;
+    --white: #fff;
+    --black: #000;
+    --gray-100: #f5f7f9;
+    --gray-200: #e5e7e9;
+    --gray-300: #d5d7d9;
+    --gray-400: #c5c7c9;
+    --gray-500: #b5b7b9;
+    --gray-600: #a5a7a9;
+    --gray-700: #959799;
+    --gray-800: #858789;
+    --gray-900: #757779;
+    --black-100: #656769;
+    --black-200: #555759;
+    --black-300: #454749;
+    --black-400: #353739;
+    --black-500: #252729;
+    --black-600: #151719;
+    --black-700: #050709;
+    --body-color: #fff;
+    --definition-block: #fff;
+    --text-color: var(--black-300);
+    --toggle-theme: var(--black-300);
+    --shadow-color: rgba(0,0,0,.1);
+    --shadow-focus: rgba(255, 68, 6, .5);
+    --button-hover: #EF0909;
+    --phonetic-color: #fff;
+    --hover-items: var(--gray-100);
+    --link-color: #111247;
+}
+
+// Light theme mode
+.light-mode {
+    --primary-color: #ff4406;
+    --white: #000000;
+    --black: #ffffff;
+    --gray-100: #f5f7f9;
+    --gray-200: #e5e7e9;
+    --gray-300: #d5d7d9;
+    --gray-400: #c5c7c9;
+    --gray-500: #b5b7b9;
+    --gray-600: #a5a7a9;
+    --gray-700: #959799;
+    --gray-800: #858789;
+    --gray-900: #757779;
+    --black-100: #656769;
+    --black-200: #555759;
+    --black-300: #454749;
+    --black-400: #353739;
+    --black-500: #252729;
+    --black-600: #151719;
+    --black-700: #050709;
+    --body-color: #252529;
+    --definition-block: #1B1C1D;
+    --text-color: #A5A7A9;
+    --toggle-theme: #f5f7f9;
+    --shadow-color: rgba(0,0,0,.1);
+    --shadow-focus: rgba(255, 68, 6, .5);
+    --button-hover: #EF0909;
+    --phonetic-color: #1A1B1C;
+    --hover-items: #353739;
+    --link-color: #595aa0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    background-color: var(--body-color);
+    height: inherit;
+    margin: auto;
+    transition: .3s ease-in-out;
+}
+
+.toast {
+    width: 300px;
+    height: auto;
+    position: fixed;
+    bottom: 50px;
+    right: calc(50% - 300px / 2);
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    opacity: 0;
+}
+
+.flash-toast {
+    animation: flash 5s ease-in-out;
+}
+
+header, main, footer {
+    width: 60%;
+    margin: auto;
+}
+
+header {
+    height: 150px;
+}
+
+.title {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo-container {
+    width: auto;
+    height: 100%;
+    img, span {
+        display: flex;
+        align-items: center;
+    }
+
+    img {
+        width: 30%;
+        justify-content: flex-start;
+    }
+
+    span {
+        width: 70%;
+        justify-content: center;
+        color: var(--primary-color);
+        font-weight: 700;
+        font-size: 1.5rem;
+    }
+}
+
+.logo {
+    width: inherit;
+    height: 100%;
+    display: flex;
+    text-decoration: none;
+}
+
+.theme {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button {
+        appearance: none;
+        background-color: transparent;
+        border: none;
+        font-size: 1.2rem;
+        color: var(--toggle-theme);
+        cursor: pointer;
+    }
+}
+
+main {
+    height: auto;
+}
+
+.user-form {
+    width: 100%;
+    & form {
+        width: inherit;
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+    }
+}
+
+.field-style {
+    width: 100%;
+    height: 45px;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 0 2px var(--shadow-color), 0 0 2px rgba(0,0,0,.08);
+    outline: none;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    color: var(--black-100);
+    
+    &:focus {
+        box-shadow: 0 0 2px var(--shadow-focus);
+    }
+}
+
+.search-button {
+    width: 90px;
+    height: inherit;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    &:hover {
+        background-color: var(--button-hover);
+    }
+    &:active {
+        background-color: var(--primary-color);
+    }
+}
+
+.definitions {
+    width: 100%;
+    min-height: calc(100vh - 300px);
+}
+
+.empty-section {
+    width: 100%;
+    height: calc(100vh - 300px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img {
+        width: 200px;
+    }
+    figcaption {
+        color: var(--primary-color);
+        font-weight: 400;
+        font-size: 1.3rem;
+        opacity: .5;
+    }
+}
+
+.word-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+    .word {
+        text-indent: 25px;
+    }
+}
+
+.phonetic-buttons {
+    text-align: end;
+    .phonetic-button {
+        appearance: none;
+        border: none;
+        background-color: var(--phonetic-color);
+        box-shadow: 0 0 2px var(--shadow-color);
+        border-radius: 3px;
+        padding: 5px 15px;
+        color: var(--black);
+        cursor: pointer;
+        transition: .3s ease-in-out;
+        span {
+            font-weight: 700;
+        }
+        i {
+            color: var(--primary-color);
+        }
+        &:hover {
+            background-color: var(--hover-items);
+        }
+        &:active {
+            background-color: var(--white);
+        }
+    }
+}
+
+.definition-section {
+    margin-top: 10px;
+    background-color: var(--definition-block);
+    overflow: hidden;
+    transition: .3s ease-in-out;
+    details {
+        transition: 1s ease-in-out;
+    }
+    summary {
+        padding: 20px;
+        color: var(--primary-color);
+        cursor: pointer;
+        user-select: none;
+        &:hover {
+            background-color: var(--hover-items);
+        }
+    }
+    ol {
+        padding: 10px 50px;
+    }
+    
+    .definition-item {
+        padding: 10px;
+    }
+
+    .example, .synonyms {
+        padding: 10px 20px;
+    }
+}
+
+footer {
+    height: auto;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+}
+
+.info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    .col-start, .col-end {
+        font-size: .8rem;
+    }
+    .col-start {
+        a {
+            color: var(--black-100);
+            text-decoration: none;
+        }
+    }
+    .col-middle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        img {
+            width: 50px;
+        }
+        span {
+            color: var(--primary-color);
+        }
+    }
+}
+
+.advice {
+    background-color: var(--black-400);
+    color: var(--gray-200);
+    text-align: center;
+    padding: 15px;
+    font-size: small;
+    a {
+        color: var(--gray-500);
+        text-decoration: none;
+    }
+}
+
+.img-fit {
+    width: 100%;
+}
+
+.card-style {
+    border-radius: 8px;
+    box-shadow: 0 0 2px var(--shadow-color);
+}
+
+.link-style {
+    text-decoration: none;
+    color: var(--link-color);
+}
+
+@keyframes flash {
+    0% {opacity: 0;}
+    10% {opacity: 100;}
+    90% {opacity: 100;}
+    100% {opacity: 0;}
+}
+
+@media screen and (max-width: 768px) {
+    header, main, footer {
+        width: 90%;
+    }
+    .logo {
+        span {
+            width: 50%;
+        }
+    }
+    .word-info {
+        flex-direction: column;
+        text-align: start;
+        justify-content: space-evenly;
+        align-items: start;
+        text-indent: 0;
+        .phonetic-buttons {
+            display: flex;
+            gap: 10px;
+            .phonetic-button {
+                padding: 10px 15px;
+            }
+        }
+    }
+    .info {
+        grid-template-columns: 1fr;
+        .col-start {
+            order: 1;
+        }
+        .col-middle {
+            margin: 5px 40px;
+        }
+    }
+    .definition-section {
+        ol {
+            padding: 10px 35px;
+        }
+    }
+}
+
+@media screen and (max-width: 1140px) {
+    .col-middle {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+@media screen and (max-height: 580px) {
+    .empty-section {
+        height: 400px;
+    }
+}

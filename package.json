@@ -1,0 +1,23 @@
+{
+  "name": "dictionary",
+  "version": "1.0.0",
+  "description": "Fetch words and see definitions, phonema, synonims and so on...",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ALV1992"
+  },
+  "keywords": [
+    "dict",
+    "dictionary",
+    "words"
+  ],
+  "author": "Alvaro Alves",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

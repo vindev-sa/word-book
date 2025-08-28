@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css' integrity='sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==' crossorigin='anonymous'/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/public/style.css">
+
+    <title>Dictionary App</title>
+</head>
+<body>
+
+    <div class="toast" id="toast">
+        <p>Não encontramos Bookker nas base de dados.</p>
+    </div>
+    
+    <header>
+        <div class="title">
+            <div class="logo-container">
+                <a href="#" class="logo">
+                    <img src="./src/public/logo.svg">
+                    <span >Word Book</span>
+                </a>
+            </div>
+            <div class="theme" id="themeButton">
+                <button><i class="fa-solid fa-circle-half-stroke"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="user-form">
+            <form id="form">
+                <input type="search" class="field-style" placeholder="Ex.: Book">
+                <button class="search-button">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="submit" value="" style="display:none">
+                </button>
+            </form>
+        </div>
+
+        <div class="definitions" id="definitions">
+            <figure class="empty-section">
+                <img src="./src/public/empty-book.svg" alt="Livro fechado indicando que o painel de definições está vazio">
+                <figcaption>O Dicionário Está Fechado</figcaption>
+            </figure>
+
+            
+            <div class="word-info">
+                <div class="word">
+                    <h3 id="word">Book</h3>
+                </div>
+                <div class="phonetic-buttons">
+                    <button class="phonetic-button">US <span>/bu:k/ </span><i class="fa-solid fa-volume-high"></i></button>
+                    <button class="phonetic-button">UK <span>/bu:k/ </span><i class="fa-solid fa-volume-high"></i></button>
+                </div>
+            </div>
+
+            <div class="sections " id="sections">
+                <div class="definition-section card-style">
+                    <details open>
+                        <summary>Noun</summary>
+                        <ol>
+                            <li class="definition-item">
+                                    <div class="definition">A collection of sheets of paper bound together to hinge at one edge, containing printed or written material, pictures, etc. </div>
+                                    <div class="example"><strong>Example:</strong> He was frustrated because he couldn't find anything about dinosaurs in the book.</div>
+                            </li>
+                            <li class="definition-item">
+                                <div class="definition">A long work fit for publication, typically prose, such as a novel or textbook, and typically published as such a bound collection of sheets, but now sometimes electronically as an e-book.</div>
+                                <div class="example"><strong>Example:</strong> I have three copies of his first book.</div>
+                            </li>
+                            <li class="definition-item">
+                                <div class="definition">A major liision of a long work.</div>
+                                <div class="example"><strong>Example:</strong> Genesis is the first book of the Bible.</div>
+                            </li>
+                            <li class="definition-item">
+                                <div class="definition">A record of betting (from the use of a notebook to record what each person has bet).</div>
+                                <div class="example"><strong>Example:</strong> I'm running a book on who is going to win the race.</div>
+                            </li>
+                            <li class="definition-item">
+                                <div class="definition">A convenient collection, in a form resembling a book, of small paper items for inliidual use.</div>
+                                <div class="synonyms"><strong>Synonyms:</strong> 
+                                    <ol>
+                                        <li>booklet</li>
+                                    </ol>
+                                </div>
+
+                                <div class="example"><strong>Example:</strong> a book of raffle tickets</div>
+                            </li>
+                            <li class="definition-item">
+                                <div class="definition">The script of a musical or opera.</div>
+                                <div class="synonyms"><strong>Synonyms:</strong> 
+                                    <ol>
+                                        <li>libretto</li>
+                                    </ol>
+                                </div>
+                            </li>
+                            <li class="definition-item">
+                                <div class="definition">(usually in the plural) Records of the accounts of a business.</div>
+                                <div class="synonyms"><strong>Synonyms:</strong>
+                                    <ol>
+                                        <li>Account</li>
+                                        <li>Record</li>
+                                    </ol>
+                                </div>
+                            </li>
+                            <li class="definition-item">
+                                <div class="definition">A book award, a recognition for receiving the highest grade in a class (traditionally an actual book, but recently more likely a letter or certificate acknowledging the achievement).</div>
+                            </li>
+                            <li class="definition-item">
+                                <div class="definition">(whist) Six tricks taken by one side.</div>
+                            </li>
+                            <li class="definition-item">
+                                <div class="definition">Four of a kind</div>
+                            </li>
+                            <li class="definition-item">
+                                <div class="definition">A document, held by the referee, of the incidents happened in the game.</div>
+                            </li>
+                            <li class="definition-item">
+                                <div class="definition">(by extension) A list of all players who have been booked (received a warning) in a game.</div>
+                            </li>
+                            <li class="definition-item">
+                                <div class="definition">The twenty-sixth Lenormand card.</div>
+                            </li>
+                            <li class="definition-item">
+                                <div class="definition">Any source of instruction.</div>
+                            </li>
+                            <li class="definition-item">
+                                <div class="general-synonyms"><strong>General Synonyms:</strong></div>
+                                <ol>
+                                    <li>account</li>
+                                    <li>Record</li>
+                                    <li>booklet</li>
+                                    <li>libretto</li>
+                                    <li>tome</li>
+                                    <li>volume</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </details>
+                </div>
+                <div class="definition-section card-style">
+                    <details>
+                        <summary>Verb</summary>
+                    </details>
+                </div>
+                <div class="definition-section card-style">
+                    <details>
+                        <summary>Verb</summary>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="info">
+            <div class="col-start"><p>Desenvolvido por <a href="https://github.com/vindev-sa" target="_blank">Alvaro Alves</a></p></div>
+            <div class="col-middle"><img src="./src/public/logo.svg"> <span>Word Book 1.0</span> </div>
+            <div class="col-end"> <p>Minha página do  <a class="link-style" href="https://github.com/ALV1992">GitHub</a></p></div>
+        </div>
+        
+    </footer>
+    <div class="advice">
+        Este site usa uma API disponível em <a href="https://api.dictionaryapi.dev/api/v2/entries/en/">dictionaryapi</a>
+    </div>
+    <script src="./src/public/script.js"></script>
+</body>
+</html>

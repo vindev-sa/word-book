@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css' integrity='sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==' crossorigin='anonymous'/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="icon" type="image/icon" href="./assets/favicon.ico">
+
+    <title>Lexi Dictionary</title>
+</head>
+<body>
+
+    <div class="toast" id="toast">
+        <p>Não encontramos Bookker nas base de dados.</p>
+    </div>
+    
+    <header>
+        <div class="title">
+            <div class="logo-container">
+                <a href="#" class="logo">
+                    <img src="./assets/logo.svg" alt="Logo image">
+                    <span >Lexi Dictionary</span>
+                </a>
+            </div>
+            <div class="theme" id="themeButton">
+                <button type="button" title="Toggle Dark/Light Mode"><i class="fa-solid fa-circle-half-stroke"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="user-form">
+            <form id="form">
+                <input type="search" class="field-style" placeholder="Search for a word...">
+                <button class="search-button">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="submit" style="display:none">
+                </button>
+            </form>
+        </div>
+
+        <div class="definitions" id="definitions">
+            <figure class="empty-section">
+                <img src="./assets/empty-book.svg" alt="Livro fechado indicando que o painel de definições está vazio">
+                <figcaption>O Dicionário Está Fechado</figcaption>
+            </figure>
+        </div>
+    </main>
+
+    <footer>
+        <div class="info">
+            <div class="col-start"><p>Desenvolvido por <a href="#">Alvaro Alves</a></p></div>
+            <div class="col-middle"><img src="./assets/logo.svg" alt="Logo image"> <span>Lexi Dictionary 1.0</span> </div>
+            <div class="col-end"> <p>Minha página do  <a class="link-style" href="https://github.com/ALV1992">GitHub</a></p></div>
+        </div>
+        
+    </footer>
+    <div class="advice">
+        Este site usa uma API disponível em <a href="https://api.dictionaryapi.dev/api/v2/entries/en/">dictionaryapi</a>
+    </div>
+    <script src="./assets/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dictionary API Example</title>
+</head>
+<body>
+	<h1>Dictionary API Example</h1>
+	<div id="results"></div>
+
+	<script>
+		// Make a request to the API
+		fetch("https://api.dictionaryapi.dev/api/v2/entries/en/peak")
+			.then(response => response.json())
+			.then(data => {
+				// Extract relevant information from the response
+				const word = data[0].word;
+				const phonetics = data[0].phonetics;
+				const meanings = data[0].meanings;
+
+				// Display the word and phonetics
+				const resultsDiv = document.getElementById("results");
+				resultsDiv.innerHTML += `
+					<h2>${word}</h2>
+					${phonetics.map(p => `
+						<button onclick="document.getElementById('audio-${p.audio}').play()">
+							${p.text}
+						</button>
+						<audio id="audio-${p.audio}">
+							<source src="${p.audio}" type="audio/mpeg">
+						</audio>
+					`).join("")}
+				`;
+
+				// Display the meanings
+				meanings.forEach(meaning => {
+					resultsDiv.innerHTML += `
+						<h3>${meaning.partOfSpeech}</h3>
+						<ul>
+							${meaning.definitions.map(def => `
+								<li>${def.definition}</li>
+							`).join("")}
+						</ul>
+					`;
+				});
+			})
+			.catch(error => {
+				console.error(error);
+				document.getElementById("results").textContent = "An error occurred while fetching the data.";
+			});
+	</script>
+</body>
+</html>
